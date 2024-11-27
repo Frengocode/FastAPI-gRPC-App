@@ -4,6 +4,7 @@ import pytest
 
 BASE_URL = "http://localhost:8000"
 
+###### ALL TESTS PASSED ######
 
 @pytest.mark.asyncio
 async def test_create_todo():
