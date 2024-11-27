@@ -1,0 +1,63 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+
+package todo;
+
+message Todo {
+    uint32 id = 1;       
+    string name = 2;
+    bool completed = 3;
+    uint64 day = 4;      
+}
+
+message CreateToDoRequest {
+    string name = 1;
+    bool completed = 2;
+    uint64 day = 3;        
+}
+
+message CreateToDoResponse {
+    Todo todo = 1;        
+}
+
+
+message GetToDoResponse {
+    repeated Todo todos = 1;
+}
+
+message GetOneTodoRequest{
+    uint64 id = 1;
+};
+
+message GetOneToDoResponse{
+    Todo todo = 1;
+};
+
+message UpdateTodoStatusRequest{
+    uint64 id = 1;
+    bool completed  = 2;
+
+};
+
+message DeleteTodoRequest{
+    uint64 id = 1;
+};
+
+message DeleteTodoResponse{
+    string detail = 1;
+};
+
+
+
+
+
+
+service TodoService {
+    rpc CreateTodo(CreateToDoRequest) returns (CreateToDoResponse);
+    rpc GetTodo(google.protobuf.Empty) returns (GetToDoResponse);
+    rpc GetOneTodo(GetOneTodoRequest) returns (GetOneToDoResponse);
+    rpc UpdateTodoStatus(UpdateTodoStatusRequest) returns (google.protobuf.Empty);
+    rpc DeleteTodo(DeleteTodoRequest) returns(DeleteTodoResponse);
+
+}
