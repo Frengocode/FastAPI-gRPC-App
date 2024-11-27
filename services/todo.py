@@ -12,8 +12,6 @@ logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
 
-
-
 class TodoService(todo_pb2_grpc.TodoServiceServicer):
 
     def __init__(self, session: AsyncSession):
