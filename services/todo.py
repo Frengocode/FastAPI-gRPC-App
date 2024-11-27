@@ -8,6 +8,7 @@ from fastapi import HTTPException
 from sqlalchemy import select
 from google.protobuf.empty_pb2 import Empty
 
+
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
