@@ -48,7 +48,6 @@ message DeleteTodoResponse{
 };
 
 
-
 service TodoService {
     rpc CreateTodo(CreateToDoRequest) returns (CreateToDoResponse);
     rpc GetTodo(google.protobuf.Empty) returns (GetToDoResponse);
