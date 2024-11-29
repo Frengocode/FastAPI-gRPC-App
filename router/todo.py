@@ -26,7 +26,6 @@ async def create_todo(
 async def get_all_todo(
     client: Annotated[todo_pb2_grpc.TodoServiceStub, Depends(grpc_todo_client)],
 ):
-
     response = await client.GetTodo(todo_pb2.GetToDoResponse())
     return MessageToDict(response)
 
