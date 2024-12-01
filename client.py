@@ -6,3 +6,5 @@ async def grpc_todo_client():
     client = todo_pb2_grpc.TodoServiceStub(channel)
     return client
 
+async def main() -> None:
+    pass
