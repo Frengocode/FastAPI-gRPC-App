@@ -5,7 +5,6 @@ from google.protobuf.json_format import MessageToDict
 from typing import Annotated
 from scheme.todo_scheme import CreateTodoSchema, UpdateTodoRequest
 
-
 todo_router = APIRouter(tags=["Todo Service"])
 
 
